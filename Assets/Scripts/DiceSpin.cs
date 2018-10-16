@@ -8,7 +8,7 @@ public class DiceSpin : NetworkBehaviour {
 	[SyncVar]
 	public int roll;
 
-	private float tick;
+	private float timeCheck;
     private int changeRate = 3;
 	private bool spinning = true;
 	private bool direction = true;
@@ -43,22 +43,18 @@ public class DiceSpin : NetworkBehaviour {
 	// When changing rotation, note the time of doing so for further comparisons
 	void Change()
 	{
-		if (Time.time - tick >= changeRate)
+		if (Time.time - timeCheck >= changeRate)
 		{
-			if (direction == true)
-			{
-				direction = false;
-			}
-			else
-			{
-				direction = true;
-			}
-			tick = Time.time;
+			if (direction == true) {
+				direction = false; }
+			else {
+				direction = true; }
+			timeCheck = Time.time;
 		}
 	}
 
-	// Stops the dice from spinning, currently returning a random number between 1 and 6
-	// todo: Use the min distance between the Sides GameObjects and the Compare one to determine what was rolled
+	// Stops the dice from spinning, returning a random number between 1 and 6
+	// todo: Make the dice show the side according to the given number
 	public void Stop()
 	{
 		spinning = false;
