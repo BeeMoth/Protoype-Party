@@ -153,10 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 1315097142144690, guid: 5074f6fbb6fdb7d44befa8c2c1dd73b4, type: 2}
   dice: {fileID: 1931270677573176, guid: dbf6cbe8c32490d44976a3ec8dc72871, type: 2}
-  tile: {fileID: 0}
-  canvas: {fileID: 114811881890529028, guid: 24cb2e1dc3df3b544a279e7c4c1bdec1, type: 2}
-  diceRoll: 0
-  coins: 3
+  coins: 0
 --- !u!135 &135475812660828352
 SphereCollider:
   m_ObjectHideFlags: 1

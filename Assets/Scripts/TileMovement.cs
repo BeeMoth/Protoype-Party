@@ -5,22 +5,13 @@ using UnityEngine;
 public class TileMovement : MonoBehaviour {
 
 	public Transform nextTile;
+	public Transform nextTileBranch;
 	public GameObject board;
-	public float tileDistance;
-	public float playerSpeed;
 	public bool movementTick;
-	public bool jump;
 	public int coinChange;
 
 	private BoardState boardScript;
 	private PlayerController playerScript;
-
-	// Converts the distance between this tile and the tile it points to into a speed for the player to use
-	private void Start()
-	{
-		tileDistance = Vector3.Distance(nextTile.position, transform.position);
-		playerSpeed = tileDistance * .01f;
-	}
 
 	// Activates the different effects of this tile
 	public void Effect()
